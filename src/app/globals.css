@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink-950: #0b0717;
+  --color-ink-900: #120b24;
+  --color-ink-800: #1b1234;
+  --color-ink-700: #281b4a;
+
+  --color-sun-300: #ffe07a;
+  --color-sun-400: #ffd23f;
+  --color-sun-500: #ffb627;
+  --color-ember-500: #ff8a3d;
+  --color-rose-sun: #ff4d8d;
+  --color-violet-sun: #8b5cf6;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 24s linear infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: #cbc5dc;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-sun-400);
+    color: var(--color-ink-950);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-sun-400);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(100deg, #ffe07a 0%, #ffb627 30%, #ff8a3d 55%, #ff4d8d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-brand {
+  background-image: linear-gradient(120deg, #ffd23f 0%, #ff8a3d 45%, #ff4d8d 100%);
+}
+
+@utility bg-brand-soft {
+  background-image: linear-gradient(135deg, rgba(255, 210, 63, 0.16), rgba(255, 77, 141, 0.12) 55%, rgba(139, 92, 246, 0.16));
+}
+
+@utility bg-aurora {
+  background-image:
+    radial-gradient(60% 50% at 15% 10%, rgba(255, 182, 39, 0.28), transparent 70%),
+    radial-gradient(50% 45% at 85% 20%, rgba(255, 77, 141, 0.24), transparent 70%),
+    radial-gradient(60% 60% at 50% 100%, rgba(139, 92, 246, 0.3), transparent 70%);
+}
+
+/* No backdrop-filter here on purpose: cards sit on a dark background, so a blur is
+   invisible but costs a lot of rendering time on phones. The header keeps its own blur. */
+@utility glass {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+@utility gradient-border {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(255, 210, 63, 0.7), rgba(255, 77, 141, 0.5), rgba(139, 92, 246, 0.6));
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+/* Long-form article text (blog posts, legal pages, guides) */
+@utility prose-sun {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #cbc5dc;
+
+  & h2 {
+    font-size: 1.65rem;
+    line-height: 1.3;
+    font-weight: 700;
+    margin-top: 2.6rem;
+    margin-bottom: 0.9rem;
+  }
+  & h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.8rem;
+    margin-bottom: 0.6rem;
+  }
+  & p {
+    margin-bottom: 1.15rem;
+  }
+  & ul,
+  & ol {
+    margin: 0 0 1.3rem 1.3rem;
+  }
+  & ul {
+    list-style: disc;
+  }
+  & ol {
+    list-style: decimal;
+  }
+  & li {
+    margin-bottom: 0.45rem;
+    padding-left: 0.25rem;
+  }
+  & li::marker {
+    color: var(--color-sun-400);
+  }
+  & a {
+    color: var(--color-sun-300);
+    text-decoration: underline;
+    text-decoration-color: rgba(255, 210, 63, 0.4);
+    text-underline-offset: 3px;
+  }
+  & a:hover {
+    text-decoration-color: var(--color-sun-300);
+  }
+  & strong {
+    color: #fff;
+    font-weight: 600;
+  }
+}
