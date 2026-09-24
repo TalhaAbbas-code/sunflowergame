@@ -91,7 +91,7 @@ export default function HowToPlayPage() {
                       {i === 0 ? (
                         <>
                           Get the APK from the official{" "}
-                          <Link href="/download" className="text-sun-300 hover:underline">
+                          <Link href="/download" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">
                             Sunflower Game download
                           </Link>{" "}
                           page and install it. It takes about two minutes.

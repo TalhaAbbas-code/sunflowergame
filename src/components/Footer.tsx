@@ -46,7 +46,7 @@ export default function Footer() {
           </p>
           <p className="mt-5 text-sm text-white/60">
             Questions?{" "}
-            <a href={`mailto:${siteConfig.email}`} className="text-sun-300 hover:underline">
+            <a href={`mailto:${siteConfig.email}`} className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">
               {siteConfig.email}
             </a>
           </p>

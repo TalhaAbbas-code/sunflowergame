@@ -35,7 +35,7 @@ export default function ContactPage() {
                 icon: MailIcon,
                 title: "Email",
                 body: (
-                  <a href={`mailto:${siteConfig.email}`} className="text-sun-300 hover:underline">
+                  <a href={`mailto:${siteConfig.email}`} className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">
                     {siteConfig.email}
                   </a>
                 ),
@@ -61,11 +61,11 @@ export default function ContactPage() {
               <h2 className="font-semibold">Before you write</h2>
               <p className="mt-2 leading-7 text-white/70">
                 Most download and install questions are answered in our{" "}
-                <Link href="/faq" className="text-sun-300 hover:underline">
+                <Link href="/faq" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">
                   FAQ
                 </Link>{" "}
                 and the{" "}
-                <Link href="/blog/sunflower-game-download-guide" className="text-sun-300 hover:underline">
+                <Link href="/blog/sunflower-game-download-guide" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">
                   download guide
                 </Link>
                 . Worth a quick look — it might save you a wait.

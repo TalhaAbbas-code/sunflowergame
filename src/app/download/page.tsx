@@ -15,7 +15,7 @@ import { appSchema, howToSchema } from "@/lib/schema";
 import { formatDate } from "@/components/PostCard";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Sunflower Game Download – Get the Latest APK for Android (Free)",
+  title: "Sunflower Game Download – Latest APK for Android (Free)",
   description: `Sunflower Game download for Android: get the latest APK (v${siteConfig.app.version}, ${siteConfig.app.fileSize}) free and safely. Step-by-step install guide, requirements and fixes for common errors.`,
   path: "/download",
   absoluteTitle: true,
@@ -284,7 +284,7 @@ export default function DownloadPage() {
         <div className="mx-auto mt-12 max-w-3xl">
           <FaqList faqs={faqGroups[1].faqs} />
           <p className="mt-8 text-center text-white/60">
-            More answers on the <Link href="/faq" className="text-sun-300 hover:underline">FAQ page</Link>.
+            More answers on the <Link href="/faq" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">FAQ page</Link>.
           </p>
         </div>
       </Section>

@@ -26,8 +26,8 @@ export default function NotFound() {
           </ButtonLink>
         </div>
         <p className="mt-8 text-sm text-white/50">
-          Or browse <Link href="/games" className="text-sun-300 hover:underline">all games</Link> and the{" "}
-          <Link href="/blog" className="text-sun-300 hover:underline">blog</Link>.
+          Or browse <Link href="/games" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">all games</Link> and the{" "}
+          <Link href="/blog" className="text-sun-300 underline decoration-sun-300/40 underline-offset-4 hover:decoration-sun-300">blog</Link>.
         </p>
       </div>
     </section>
