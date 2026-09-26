@@ -1,6 +1,8 @@
-import type { NextConfig } from "next";
+// Plain JavaScript on purpose: Hostinger's servers can't run Next's native compiler,
+// and the WebAssembly fallback fails to load a TypeScript config file.
 
-const nextConfig: NextConfig = {
+/** @type {import("next").NextConfig} */
+const nextConfig = {
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
